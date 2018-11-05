@@ -21,8 +21,8 @@ Configuración:
 <br>
 2- Slim <br>
 2.1 Adicionamos al directorio del proyecto el archivo configure.json <br>
-2.2 Creamos directorio vendor en la raiz del proyecto
-2.3 Creamos directorio public en la raiz del proyecto
+2.2 Creamos directorio vendor en la raiz del proyecto <br>
+2.3 Creamos directorio public en la raiz del proyecto <br>
 2.4 Creamos, dentro de public, el archivo index.php <br>
 2.5 Adicionamos, en el mismo directorio -public-, el archivo .htaccess <br>
 <br>
