@@ -11,4 +11,5 @@ COPY ./composer.json /var/www/html/
 RUN apt-get update && apt-get install -y git
 RUN composer install
 
+RUN sed -i 's/DocumentRoot.*$/DocumentRoot \/var\/www\/html\/public/' /etc/apache2/sites-enabled/000-default.conf 
 RUN a2enmod rewrite

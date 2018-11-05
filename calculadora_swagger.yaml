@@ -1,0 +1,148 @@
+swagger: "2.0"
+info:
+  description: "Este es un server que provee las 4 operaciones básicas de una calculadora."
+  version: "1.0.0"
+  title: "Docker Calculator"
+#  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "rgomezcuervo@gmail.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "localhost"
+basePath: "/"
+tags:
+- name: "suma"
+  description: "Suma dos parametros que vengan en la url."
+#  externalDocs:
+#    description: "Find out more"
+#    url: "http://swagger.io"
+- name: "resta"
+  description: "Resta dos parametros que vengan en la url. "
+- name: "multiplica"
+  description: "Multiplica  dos parametros que vengan en la url. "
+- name: "divide"
+  description: "Divide dos parametros proveeidos por la url"
+schemes:
+#- "https"
+- "http"
+paths:
+  /suma/{num1}/{num2}:
+    get:
+      tags:
+      - "suma"
+      summary: "Sumar números"
+      description: "Suma dos números"
+      operationId: "sumar"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "num1"
+        in: "path"
+        description: "operador 1"
+        required: true
+        type: "number"
+        format: "int64"
+      - name: "num2"
+        in: "path"
+        description: "operador 2"
+        required: true
+        type: "number"
+        format: "int64"
+      responses:
+        200:
+          description: "Suma realizada"
+          schema:
+            type: "number"   
+  /resta/{num1}/{num2}:
+    get:
+      tags:
+      - "resta"
+      summary: "Restar números"
+      description: "Resta dos números"
+      operationId: "restar"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "num1"
+        in: "path"
+        description: "operador 1"
+        required: true
+        type: "number"
+        format: "int64"
+      - name: "num2"
+        in: "path"
+        description: "operador 2"
+        required: true
+        type: "number"
+        format: "int64"
+      responses:
+        200:
+          description: "Resta realizada"
+          schema:
+            type: "number"     
+  /multiplica/{num1}/{num2}:
+    get:
+      tags:
+      - "multiplica"
+      summary: "Multiplicar números"
+      description: "Multiplica dos números"
+      operationId: "multiplicar"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "num1"
+        in: "path"
+        description: "operador 1"
+        required: true
+        type: "number"
+        format: "int64"
+      - name: "num2"
+        in: "path"
+        description: "operador 2"
+        required: true
+        type: "number"
+        format: "int64"
+      responses:
+        200:
+          description: "Multiplicación realizada"
+          schema:
+            type: "number"   
+  /divide/{num1}/{num2}:
+    get:
+      tags:
+      - "divide"
+      summary: "Dividir números"
+      description: "Divide dos números"
+      operationId: "dividir"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "num1"
+        in: "path"
+        description: "operador 1"
+        required: true
+        type: "number"
+        format: "int64"
+      - name: "num2"
+        in: "path"
+        description: "operador 2"
+        required: true
+        type: "number"
+        format: "int64"
+      responses:
+        200:
+          description: "Divición realizada"
+          schema:
+            type: "number" 
+        400:
+          description: "Error al operar: "
+          schema:
+            type: "string" 
+externalDocs:
+  description: "Mas información "
+  url: "https://github.com/rgomezcuervo/calculadoradocker"

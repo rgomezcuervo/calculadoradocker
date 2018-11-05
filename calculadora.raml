@@ -1,0 +1,73 @@
+#%RAML 1.0
+title: Calculadora
+
+/suma/{num1}/{num2}:
+  uriParameters:
+    num1:
+      type: number
+      example: 2    
+    num2:
+      type: number
+      example: 3
+  get:
+    description: Retorna la suma de dos números.
+    responses:
+      200:
+        body:
+          application/json:
+            type: number
+            examples: 5
+/resta/{num1}/{num2}:
+  uriParameters:
+    num1:
+      type: number
+      example: 2    
+    num2:
+      type: number
+      example: 3
+  get:
+    description: Retorna la resta de dos números.
+    responses:
+      200:
+        body:
+          application/json:
+            type: number
+            examples: -1
+/multiplica/{num1}/{num2}:
+  uriParameters:
+    num1:
+      type: number
+      example: 2    
+    num2:
+      type: number
+      example: 3
+  get:
+    description: Retorna la multiplicación de dos números.
+    responses:
+      200:
+        body:
+          application/json:
+            type: number
+            examples: 6
+/divide/{num1}/{num2}:
+  uriParameters:
+    num1:
+      type: number
+      example: 2    
+    num2:
+      type: number
+      example: 3
+  get:
+    description: Retorna la divición de dos números.
+    responses:
+      200:
+        body:
+          application/json:
+            type: number
+            examples: 0.66666
+      404:
+        body:
+          application/json:
+            type: string
+            examples: "No se puede dividir entre 0"
+
