@@ -3,12 +3,12 @@ Implementación de un servicio de calculadora en Docker y soportado en Slim Fram
 
 USO:
 
-localhost/{operacion}/operador1:operador2[:operador3[:operador4[:operadorN]]] <br>
+localhost/{operacion}/{operador1}/{operador2} <br>
 
-http://localhost/suma/1:0:5:6 <br>
-http://localhost/resta/24:5:14  <br>
-http://localhost/multiplica/1:2:3:4 <br>
-http://localhost/divide/10:2 <br>
+http://localhost/suma/1/6 <br>
+http://localhost/resta/24/14  <br>
+http://localhost/multiplica/1/4 <br>
+http://localhost/divide/10/2 <br>
 
 Configuración:
 
@@ -26,6 +26,6 @@ Configuración:
 <br>
 3 Compilación:<br>
 3.1 Compilamos el proyecto:<br>
-      docker build -t php_slim .   <br>
+      docker build -t rgomezcuervo/calculadora:2.0 .   <br>
 3.2 Corremos el proyecto:<br>
-      docker run --rm -v $(pwd):/var/www/html/ -v /var/www/html/vendor/ -p 80:80 php_slim<br>
+      docker run --rm -v $(pwd):/var/www/html/ -v /var/www/html/vendor/ -p 80:80 rgomezcuervo/calculadora:2.0<br>
